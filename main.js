@@ -17,11 +17,11 @@ nel corpo principale verranno visualizzate le statistiche corrispondenti.
 //creo l'oggetto player, corrispondente al singolo giocatore e contenente le sue info personali
 var player = {
   'playerCode': casualCode(),
-  'points': '',
-  'rebound': '',
-  'fouls': '',
-  'percent_2pt': '',
-  'percent_3pt': ''
+  'points': casualPoints(),
+  'rebound': casualRebounds(),
+  'fouls': casualFouls(),
+  'percent_2pt': casualPercent_2pt(),
+  'percent_3pt': casualPercent_3pt()
 };
 
 console.log(player);
@@ -46,6 +46,37 @@ function casualCode () {
   return randomCode.join('');
 }
 console.log(casualCode());
+
+//funzione per generare numero di punti casuale
+function casualPoints () {
+  var point = Math.floor(Math.random() * 120);
+  return point
+}
+
+//funzione per generare numero di rimbalzi casuale
+function casualRebounds () {
+  var rebound = Math.floor(Math.random() * 60);
+  return rebound
+}
+
+//funzione per generare numero random di falli tecnici
+function casualFouls () {
+  var foul = Math.floor(Math.random() * 40);
+  return foul
+}
+
+//funzione per generare percentuale casuale di tiri da 2 punti
+function casualPercent_2pt () {
+  var percent_2pt = Math.floor(Math.random() * 1000 ) /10;
+  return percent_2pt
+}
+
+//funzione per generare percentuale casuale di tiri da 2 punti
+function casualPercent_3pt () {
+  var percent_3pt = Math.floor(Math.random() * 1000 ) /10;
+  return percent_3pt
+}
+
 //aggiungo le proprietà all'oggetto Giocatore
 
 //ripeto per 100 volte questa operazione
