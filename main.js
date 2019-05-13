@@ -16,16 +16,14 @@ nel corpo principale verranno visualizzate le statistiche corrispondenti.
 
 //creo l'oggetto player, corrispondente al singolo giocatore e contenente le sue info personali
 var player = {
-  'playerCode': casualCode(),
-  'points': casualPoints(),
-  'rebound': casualRebounds(),
-  'fouls': casualFouls(),
-  'percent_2pt': casualPercent_2pt(),
-  'percent_3pt': casualPercent_3pt()
+  'playerCode': '',
+  'points': '',
+  'rebound': '',
+  'fouls': '',
+  'percent_2pt': '',
+  'percent_3pt': ''
 };
-
-console.log(player);
-
+var players = [];
 //genero randomicamente i valori delle singole proprietà
 //funzione per generare codice composto da 3 lettere maiuscole e 3 numeri
 function casualCode () {
@@ -45,7 +43,6 @@ function casualCode () {
   }
   return randomCode.join('');
 }
-console.log(casualCode());
 
 //funzione per generare numero di punti casuale
 function casualPoints () {
@@ -76,6 +73,25 @@ function casualPercent_3pt () {
   var percent_3pt = Math.floor(Math.random() * 1000 ) /10;
   return percent_3pt
 }
+
+//creo una lista di 100 giocatori, ognuno con le sue proprietà casuali
+var i=0;
+
+while (i<100) {
+  player = {
+    'playerCode': casualCode(),
+    'points': casualPoints(),
+    'rebound': casualRebounds(),
+    'fouls': casualFouls(),
+    'percent_2pt': casualPercent_2pt(),
+    'percent_3pt': casualPercent_3pt()
+  };
+  players.push(player);
+
+  $('.data-players').append('<div class="giocatore"><p>' + player.playerCode + '</p></div');
+  i++;
+}
+
 
 //aggiungo le proprietà all'oggetto Giocatore
 
