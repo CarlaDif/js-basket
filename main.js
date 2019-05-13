@@ -77,7 +77,9 @@ function casualPercent_3pt () {
 //creo una lista di 100 giocatori, ognuno con le sue proprietà casuali
 var i=0;
 
+//inizializzo un ciclo che si ripete 100 volte
 while (i<100) {
+  //aggiungo le proprietà all'oggetto Giocatore
   player = {
     'playerCode': casualCode(),
     'points': casualPoints(),
@@ -86,13 +88,22 @@ while (i<100) {
     'percent_2pt': casualPercent_2pt(),
     'percent_3pt': casualPercent_3pt()
   };
+  //push del nuovo oggetto giocatore nell'array contenente tutti gli oggetti "player"
   players.push(player);
 
-  $('.data-players').append('<div class="giocatore"><p>' + player.playerCode + '</p></div');
+
+    //creo un div in cui salvo il codice del giocatore appena creato
+    $('.data-players').append('<div class="giocatore"><button>' + player.playerCode + '</button></div>');
+    console.log(player.playerCode);
+    $('.data-players').append('<div class="schedule">' + player + '</div>');
+    // $('.schedule').html(
+    //   '<div class="punti">Punti: ' + player.points + '</div>' +
+    //   '<div class="rimbalzi">Rimbalzi: ' + player.rebound + '</div>' +
+    //   '<div class="falli">Falli: ' + player.fouls + '</div>' +
+    //   '<div class="tiri-2pt">Percentuale tiri da 2 punti: ' + player.percent_2pt + '</div>' +
+    //   '<div class="tiri-3pt">Percentuale tiri da 3 punti: ' + player.percent_3pt + '</div>'
+    // );
+
+
   i++;
 }
-
-
-//aggiungo le proprietà all'oggetto Giocatore
-
-//ripeto per 100 volte questa operazione
