@@ -5,29 +5,48 @@ padding: 0;
 font-family: sans-serif;
 }
 section {
-  background-image: url('http://enciclopediatrecani.altervista.org/wp-content/uploads/2016/06/National-Basketball-Association-NBA-Logo-Wallpaper.jpg');
-  background-size: contain;
-  height: 100vh;
+  background-color: #222;
 }
 .container {
-  width: 1200px;
+  width: 80%;
   margin: 0 auto;
+  position: relative;
 }
-.data-players p {
+.container::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.data-players {
+  width: 25%;
   color: #fff;
   padding: 20px 0;
+  float: left;
 }
-button {
-  width: 100px;
+.schedule {
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  width: 60%;
+  height: 100vh;
+  border: 2px solid red;
+  color: white;
+}
+.schedule.visible {
+  display: block;
+}
+.data-players h1 {
+  margin: 20px 0;
+}
+.giocatore {
+  width: 120px;
   height: 30px;
   line-height: 30px;
   border: none;
   background-color: rgba(0,0,0,.2);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: #fff;
   border-radius: 5px;
-}
-.schedule {
-
-  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
 }

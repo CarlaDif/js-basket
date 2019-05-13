@@ -29,7 +29,7 @@ var players = [];
 function casualCode () {
   //array con le lettere possibili
   var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-  var numbers = ['0','1','2','3','4','5','6','7','8','9']
+  var numbers = ['0','1','2','3','4','5','6','7','8','9'];
   var randomCode = [];
 
   //ciclo for per determinare le 3 lettere random
@@ -76,7 +76,6 @@ function casualPercent_3pt () {
 
 //creo una lista di 100 giocatori, ognuno con le sue proprietà casuali
 var i=0;
-
 //inizializzo un ciclo che si ripete 100 volte
 while (i<100) {
   //aggiungo le proprietà all'oggetto Giocatore
@@ -91,11 +90,10 @@ while (i<100) {
   //push del nuovo oggetto giocatore nell'array contenente tutti gli oggetti "player"
   players.push(player);
 
-
     //creo un div in cui salvo il codice del giocatore appena creato
-    $('.data-players').append('<div class="giocatore"><button>' + player.playerCode + '</button></div>');
-    console.log(player.playerCode);
-    $('.data-players').append('<div class="schedule">' + player + '</div>');
+    $('.data-players').append('<div class="giocatore">' + player.playerCode + '</div>');
+    // console.log(player.playerCode);
+    // $('.data-players').append('<div class="schedule">' + players[player] + '</div>');
     // $('.schedule').html(
     //   '<div class="punti">Punti: ' + player.points + '</div>' +
     //   '<div class="rimbalzi">Rimbalzi: ' + player.rebound + '</div>' +
@@ -104,6 +102,21 @@ while (i<100) {
     //   '<div class="tiri-3pt">Percentuale tiri da 3 punti: ' + player.percent_3pt + '</div>'
     // );
 
-
   i++;
 }
+console.log(players);
+
+$('.giocatore').click(function(){
+  var giocatore_corrente = $(this).text();
+  for (var i = 0; i < players.length; i++) {
+    if (players[i].playerCode == giocatore_corrente) {
+      $('.schedule').append('<div class="name"><h1>' + players[i].playerCode + '</h1></div>');
+      $('.schedule').append('<div class="point">Punti: ' + players[i].points + '</div>');
+      $('.schedule').append('<div class="rebound">Rimbalzi :' + players[i].rebound + '</div>');
+      $('.schedule').append('<div class="fouls">Falli commessi: ' + players[i].fouls + '</div>');
+      $('.schedule').append('<div class="percent_2pt">Tiri da 2 punti (%): ' + players[i].percent_2pt + '</div>');
+      $('.schedule').append('<div class="percent_3pt">Tiri da 3 punti (%): ' + players[i].percent_3pt + '</div>');
+    }
+
+  }
+});
