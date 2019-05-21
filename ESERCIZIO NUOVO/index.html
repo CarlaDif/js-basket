@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Basket - New</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="giocatori">
+          <div class="titolo">
+            <h1>Giocatori</h1>
+          </div>
+          <div class="lista">
+            <ul>
+              <!-- LISTA GIOCATORI -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="statistiche">
+
+        </div>
+      </div>
+    </div>
+    <script id="template-lista" type="text/x-handlebars-template">
+      <li class="{{classe-lista}}">{{unicode}}</li>
+    </script>
+    <script id="template-statistica" type="text/x-handlebars-template">
+      <div class="statistica">
+        <div class="title">
+          <h1>{{unicode}}</h1>
+        </div>
+        <div class="caratteristiche">
+          <p><span>Punti:</span> {{punti}}</p>
+          <p><span>Rimbalzi:</span> {{rimbalzi}}</p>
+          <p><span>Falli:</span> {{falli}}</p>
+          <p><span>Tiri da 2 punti (%):</span> {{tiri_2pt}}</p>
+          <p><span>Tiri da 3 punti (%):</span> {{tiri_3pt}}</p>
+        </div>
+      </div>
+    </script>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
